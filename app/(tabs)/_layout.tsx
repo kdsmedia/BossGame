@@ -1,7 +1,9 @@
 import { MaterialIcons } from '@expo/vector-icons';
+import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import { Tabs } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Platform, View, StyleSheet } from 'react-native';
+import { AdBanner } from '@/components/ui/AdBanner';
 import { Colors } from '@/constants/theme';
 
 export default function TabLayout() {
@@ -27,6 +29,12 @@ export default function TabLayout() {
 
   return (
     <Tabs
+      tabBar={(props) => (
+        <View>
+          <AdBanner />
+          <BottomTabBar {...props} />
+        </View>
+      )}
       screenOptions={{
         headerShown: false,
         tabBarStyle,
