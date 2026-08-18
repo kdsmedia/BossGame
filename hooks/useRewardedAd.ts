@@ -1,14 +1,24 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import {
-  AdEventType,
-  RewardedAd,
-  RewardedAdEventType,
-  TestIds,
-} from 'react-native-google-mobile-ads';
+import type { RewardedAd } from 'react-native-google-mobile-ads';
 import { AD_UNIT_IDS, REWARDED_AD_COOLDOWN_MS } from '@/constants/ads';
 
-const unitId = __DEV__ ? TestIds.REWARDED : AD_UNIT_IDS.rewarded;
+// Modul native tidak tersedia di Expo Go — require di-guard agar tidak crash
+let RewardedAdModule: typeof RewardedAd | null = null;
+let AdEventType: any = {};
+let RewardedAdEventType: any = {};
+let unitId = AD_UNIT_IDS.rewarded;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const ads = require('react-native-google-mobile-ads');
+  RewardedAdModule = ads.RewardedAd;
+  AdEventType = ads.AdEventType;
+  RewardedAdEventType = ads.RewardedAdEventType;
+  unitId = __DEV__ ? ads.TestIds.REWARDED : AD_UNIT_IDS.rewarded;
+} catch {
+  // Expo Go — iklan dinonaktifkan
+}
+
 const COOLDOWN_KEY = '@rewarded_ad_cooldown_until';
 
 export function useRewardedAd(onEarnedReward?: () => void) {
@@ -23,7 +33,8 @@ export function useRewardedAd(onEarnedReward?: () => void) {
     let cancelled = false;
 
     const load = () => {
-      const ad = RewardedAd.createForAdRequest(unitId, {
+      if (!RewardedAdModule) return;
+      const ad = RewardedAdModule.createForAdRequest(unitId, {
         requestNonPersonalizedAdsOnly: true,
       });
       adRef.current = ad;
