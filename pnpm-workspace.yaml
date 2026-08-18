@@ -1,4 +1,5 @@
+packages:
+  - "."
+
 allowBuilds:
-  protobufjs: false
-  react-native-elements: false
-  unrs-resolver: false
+  - react-native-google-mobile-ads
