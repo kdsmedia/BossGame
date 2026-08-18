@@ -1,15 +1,9 @@
-import { Platform, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import { AD_UNIT_IDS } from '@/constants/ads';
 import { Colors } from '@/constants/theme';
 
-// Ganti dengan Ad Unit ID produksi Anda sebelum rilis
-const unitId = __DEV__
-  ? TestIds.BANNER
-  : Platform.select({
-      ios: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
-      android: 'ca-app-pub-XXXXXXXXXXXXXXXX/YYYYYYYYYY',
-      default: TestIds.BANNER,
-    })!;
+const unitId = __DEV__ ? TestIds.BANNER : AD_UNIT_IDS.banner;
 
 export function AdBanner() {
   return (
