@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Pressable, Text, StyleSheet, View, Animated } from 'react-native';
 import { Colors, BorderRadius } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 import { AnswerState } from '@/contexts/GameContext';
 
 interface AnswerButtonProps {
@@ -148,6 +149,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   labelText: {
+    fontFamily: Fonts.button,
     fontSize: 16,
     fontWeight: '700',
     color: Colors.textGold,
@@ -164,6 +166,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   answerText: {
+    fontFamily: Fonts.button,
     fontSize: 15,
     fontWeight: '600',
     color: Colors.textPrimary,

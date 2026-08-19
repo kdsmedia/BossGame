@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { View, Text, StyleSheet, Animated } from 'react-native';
 import { Colors } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 
 interface AudienceChartProps {
   votes: number[];
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.goldDark,
   },
   title: {
+    fontFamily: Fonts.title,
     color: Colors.gold,
     fontWeight: '700',
     fontSize: 14,
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
     width: 48,
   },
   percent: {
+    fontFamily: Fonts.number,
     color: Colors.textPrimary,
     fontSize: 12,
     fontWeight: '700',
@@ -96,6 +99,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   label: {
+    fontFamily: Fonts.text,
     color: Colors.gold,
     fontSize: 13,
     fontWeight: '700',

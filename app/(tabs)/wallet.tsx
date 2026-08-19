@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { Colors } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 import { useGame } from '@/hooks/useGame';
 import { useAlert } from '@/template';
 
@@ -214,22 +215,22 @@ export default function WalletScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: Colors.backgroundDeep },
   headerBar: { paddingHorizontal: 20, paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: Colors.surfaceLight },
-  headerTitle: { fontSize: 22, fontWeight: '800', color: Colors.gold, letterSpacing: 1 },
+  headerTitle: { fontFamily: Fonts.title, fontSize: 22, fontWeight: '800', color: Colors.gold, letterSpacing: 1 },
   content: { padding: 20, gap: 16 },
   balanceCard: { borderRadius: 20, padding: 20, borderWidth: 1, borderColor: Colors.goldDark },
   balanceRow: { flexDirection: 'row', alignItems: 'center', gap: 14 },
   balanceCoinIcon: { width: 52, height: 52 },
-  balanceCoins: { fontSize: 28, fontWeight: '900', color: Colors.gold },
-  balanceRupiah: { fontSize: 16, color: Colors.textSecondary, marginTop: 2 },
+  balanceCoins: { fontFamily: Fonts.number, fontSize: 28, fontWeight: '900', color: Colors.gold },
+  balanceRupiah: { fontFamily: Fonts.number, fontSize: 16, color: Colors.textSecondary, marginTop: 2 },
   balanceDivider: { height: 1, backgroundColor: Colors.surfaceLight, marginVertical: 12 },
   rateRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
-  rateText: { fontSize: 12, color: Colors.textMuted },
+  rateText: { fontFamily: Fonts.text, fontSize: 12, color: Colors.textMuted },
   adsSection: { backgroundColor: Colors.surface, borderRadius: 16, padding: 16, borderWidth: 1, borderColor: Colors.surfaceLight },
   adsSectionHeader: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 12 },
   adsSectionTitle: { fontSize: 16, fontWeight: '700', color: Colors.textPrimary, flex: 1 },
-  adsProgressText: { fontSize: 13, color: Colors.gold, fontWeight: '700' },
+  adsProgressText: { fontFamily: Fonts.number, fontSize: 13, color: Colors.gold, fontWeight: '700' },
   unlockedBadge: { backgroundColor: Colors.walletGreen, borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 },
-  unlockedText: { fontSize: 10, color: '#fff', fontWeight: '700' },
+  unlockedText: { fontFamily: Fonts.button, fontSize: 10, color: '#fff', fontWeight: '700' },
   adsProgress: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 8 },
   adsProgressBar: { flex: 1, height: 8, backgroundColor: Colors.backgroundDeep, borderRadius: 4, overflow: 'hidden' },
   adsProgressFill: { height: '100%', backgroundColor: Colors.gold, borderRadius: 4 },
@@ -238,25 +239,26 @@ const styles = StyleSheet.create({
   withdrawSection: { backgroundColor: Colors.surface, borderRadius: 16, padding: 16, borderWidth: 1, borderColor: Colors.surfaceLight },
   withdrawLocked: { opacity: 0.6 },
   withdrawHeader: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 14 },
-  withdrawTitle: { fontSize: 16, fontWeight: '700', color: Colors.textPrimary, flex: 1 },
+  withdrawTitle: { fontFamily: Fonts.title, fontSize: 16, fontWeight: '700', color: Colors.textPrimary, flex: 1 },
   withdrawTitleLocked: { color: Colors.textMuted },
   limitBadge: { flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: 'rgba(245,158,11,0.15)', borderRadius: 8, padding: 10, marginBottom: 12 },
-  limitText: { fontSize: 12, color: Colors.warning, flex: 1 },
-  fieldLabel: { fontSize: 12, color: Colors.textSecondary, marginBottom: 6, marginTop: 12, letterSpacing: 0.5, fontWeight: '600' },
+  limitText: { fontFamily: Fonts.text, fontSize: 12, color: Colors.warning, flex: 1 },
+  fieldLabel: { fontFamily: Fonts.text, fontSize: 12, color: Colors.textSecondary, marginBottom: 6, marginTop: 12, letterSpacing: 0.5, fontWeight: '600' },
   methodRow: { flexDirection: 'row', gap: 12 },
   methodCard: { flex: 1, backgroundColor: Colors.backgroundDeep, borderRadius: 12, padding: 14, alignItems: 'center', borderWidth: 2, borderColor: Colors.surfaceLight },
   methodCardActive: { borderColor: Colors.gold, backgroundColor: 'rgba(255,215,0,0.08)' },
   methodLogo: { width: 80, height: 40 },
   input: {
+    fontFamily: Fonts.text,
     backgroundColor: Colors.backgroundDeep, borderRadius: 12, padding: 14,
     color: Colors.textPrimary, fontSize: 15, borderWidth: 1, borderColor: Colors.surfaceLight,
   },
   inputDisabled: { opacity: 0.5 },
-  coinCalc: { fontSize: 12, color: Colors.textMuted, marginTop: 4 },
+  coinCalc: { fontFamily: Fonts.number, fontSize: 12, color: Colors.textMuted, marginTop: 4 },
   withdrawBtn: { borderRadius: 50, overflow: 'hidden', marginTop: 16 },
   withdrawBtnDisabled: { opacity: 0.7 },
   withdrawBtnGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 16, gap: 8 },
-  withdrawBtnText: { fontSize: 16, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 2 },
+  withdrawBtnText: { fontFamily: Fonts.button, fontSize: 16, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 2 },
   withdrawBtnTextDisabled: { color: Colors.textMuted },
 
 });

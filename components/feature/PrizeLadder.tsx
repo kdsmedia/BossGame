@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Colors, PrizeValues } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 
 interface PrizeLadderProps {
   currentLevel: number;
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255,215,0,0.08)',
   },
   levelNum: {
+    fontFamily: Fonts.number,
     fontSize: 10,
     color: Colors.textMuted,
     width: 16,
@@ -95,6 +97,7 @@ const styles = StyleSheet.create({
     color: Colors.success,
   },
   coins: {
+    fontFamily: Fonts.number,
     fontSize: 10,
     color: Colors.textSecondary,
     flex: 1,

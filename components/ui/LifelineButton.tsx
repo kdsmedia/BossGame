@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, Text, StyleSheet, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Colors } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 import { LifelineType } from '@/contexts/GameContext';
 
 interface LifelineButtonProps {
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0,
   },
   label: {
+    fontFamily: Fonts.button,
     fontSize: 11,
     color: Colors.textGold,
     fontWeight: '600',

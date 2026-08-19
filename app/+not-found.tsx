@@ -3,6 +3,7 @@
  */
 
 // Powered by OnSpace.AI
+import { Fonts } from '@/constants/fonts';
 import { MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
@@ -47,6 +48,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
+    fontFamily: Fonts.title,
     fontSize: 28,
     fontWeight: 'bold',
     color: '#FFFFFF',
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   message: {
+    fontFamily: Fonts.text,
     fontSize: 16,
     color: '#CCCCCC',
     textAlign: 'center',
@@ -67,6 +70,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   homeButtonText: {
+    fontFamily: Fonts.button,
     color: '#0a0a0a',
     fontWeight: 'bold',
     fontSize: 16,

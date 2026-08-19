@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Colors, PrizeValues } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 import { useGame } from '@/hooks/useGame';
 
 const { width } = Dimensions.get('window');
@@ -206,8 +207,8 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   coinIcon: { width: 24, height: 24 },
-  coinValue: { fontSize: 18, fontWeight: '800', color: Colors.gold },
-  coinLabel: { fontSize: 13, color: Colors.textSecondary },
+  coinValue: { fontFamily: Fonts.number, fontSize: 18, fontWeight: '800', color: Colors.gold },
+  coinLabel: { fontFamily: Fonts.text, fontSize: 13, color: Colors.textSecondary },
   adsBadge: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -231,6 +232,7 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   gameTitle: {
+    fontFamily: Fonts.title,
     fontSize: 54,
     fontWeight: '900',
     color: '#FFF8DC',
@@ -250,7 +252,7 @@ const styles = StyleSheet.create({
     marginTop: -6,
   },
   titleDivider: { width: 80, height: 2, backgroundColor: Colors.gold, marginVertical: 12 },
-  tagline: { fontSize: 16, color: Colors.textSecondary, letterSpacing: 2, fontStyle: 'italic' },
+  tagline: { fontFamily: Fonts.text, fontSize: 16, color: Colors.textSecondary, letterSpacing: 2, fontStyle: 'italic' },
   prizePreview: {
     borderRadius: 16,
     overflow: 'hidden',
@@ -259,13 +261,13 @@ const styles = StyleSheet.create({
     borderColor: Colors.goldDark,
   },
   prizeGradient: { padding: 20, alignItems: 'center' },
-  prizeLabel: { fontSize: 13, color: Colors.textSecondary, letterSpacing: 2, marginBottom: 4 },
-  prizeAmount: { fontSize: 28, fontWeight: '900', color: Colors.gold, letterSpacing: 1 },
-  prizeEquiv: { fontSize: 14, color: Colors.textSecondary, marginTop: 4 },
+  prizeLabel: { fontFamily: Fonts.text, fontSize: 13, color: Colors.textSecondary, letterSpacing: 2, marginBottom: 4 },
+  prizeAmount: { fontFamily: Fonts.number, fontSize: 28, fontWeight: '900', color: Colors.gold, letterSpacing: 1 },
+  prizeEquiv: { fontFamily: Fonts.number, fontSize: 14, color: Colors.textSecondary, marginTop: 4 },
   playButton: { borderRadius: 50, overflow: 'hidden', marginBottom: 24, elevation: 10, shadowColor: Colors.gold, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.6, shadowRadius: 16 },
   playButtonPressed: { opacity: 0.85, transform: [{ scale: 0.97 }] },
   playGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 18, gap: 12 },
-  playText: { fontSize: 22, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 3 },
+  playText: { fontFamily: Fonts.button, fontSize: 22, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 3 },
   statsRow: { flexDirection: 'row', gap: 10, marginBottom: 20 },
   statCard: {
     flex: 1, backgroundColor: Colors.surface,
@@ -273,8 +275,8 @@ const styles = StyleSheet.create({
     borderWidth: 1, borderColor: Colors.surfaceLight,
   },
   statCardMiddle: { borderColor: Colors.goldDark },
-  statNum: { fontSize: 22, fontWeight: '800', color: Colors.gold },
-  statLabel: { fontSize: 11, color: Colors.textSecondary, marginTop: 2, textAlign: 'center' },
+  statNum: { fontFamily: Fonts.number, fontSize: 22, fontWeight: '800', color: Colors.gold },
+  statLabel: { fontFamily: Fonts.text, fontSize: 11, color: Colors.textSecondary, marginTop: 2, textAlign: 'center' },
   adBanner: { borderRadius: 14, overflow: 'hidden', marginBottom: 20, borderWidth: 1, borderColor: Colors.goldDark },
   adGradient: { flexDirection: 'row', alignItems: 'center', padding: 14, gap: 12 },
   adTextContainer: { flex: 1 },
@@ -283,7 +285,7 @@ const styles = StyleSheet.create({
   progressBar: { height: 4, backgroundColor: Colors.surfaceLight, borderRadius: 2, overflow: 'hidden' },
   progressFill: { height: '100%', backgroundColor: Colors.gold, borderRadius: 2 },
   howToSection: { backgroundColor: Colors.surface, borderRadius: 16, padding: 16, borderWidth: 1, borderColor: Colors.surfaceLight },
-  howToTitle: { fontSize: 16, fontWeight: '700', color: Colors.gold, marginBottom: 12, letterSpacing: 1 },
+  howToTitle: { fontFamily: Fonts.title, fontSize: 16, fontWeight: '700', color: Colors.gold, marginBottom: 12, letterSpacing: 1 },
   howToItem: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 },
-  howToText: { fontSize: 14, color: Colors.textSecondary, flex: 1 },
+  howToText: { fontFamily: Fonts.text, fontSize: 14, color: Colors.textSecondary, flex: 1 },
 });

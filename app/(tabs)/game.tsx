@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { Colors, PrizeValues } from '@/constants/theme';
+import { Fonts } from '@/constants/fonts';
 import { useGame } from '@/hooks/useGame';
 import { AnswerButton } from '@/components/ui/AnswerButton';
 import { LifelineButton } from '@/components/ui/LifelineButton';
@@ -284,13 +285,13 @@ const styles = StyleSheet.create({
   mainArea: { flex: 1, paddingHorizontal: 14 },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
   walkAwayBtn: { flexDirection: 'row', alignItems: 'center', gap: 4, paddingVertical: 8, paddingRight: 8 },
-  walkAwayText: { fontSize: 12, color: Colors.textSecondary },
+  walkAwayText: { fontFamily: Fonts.button, fontSize: 12, color: Colors.textSecondary },
   levelBadge: {
     backgroundColor: Colors.surface, borderRadius: 20,
     paddingHorizontal: 16, paddingVertical: 6,
     borderWidth: 1, borderColor: Colors.goldDark,
   },
-  levelText: { fontSize: 13, color: Colors.gold, fontWeight: '700' },
+  levelText: { fontFamily: Fonts.number, fontSize: 13, color: Colors.gold, fontWeight: '700' },
   ladderBtn: { paddingVertical: 8, paddingLeft: 8 },
   currentPrize: {
     alignItems: 'center', marginBottom: 10,
@@ -298,8 +299,8 @@ const styles = StyleSheet.create({
     borderTopWidth: 1, borderBottomWidth: 1,
     borderColor: 'rgba(255,215,0,0.2)',
   },
-  currentPrizeLabel: { fontSize: 11, color: Colors.textMuted, letterSpacing: 1 },
-  currentPrizeValue: { fontSize: 20, fontWeight: '900', color: Colors.gold, letterSpacing: 1 },
+  currentPrizeLabel: { fontFamily: Fonts.text, fontSize: 11, color: Colors.textMuted, letterSpacing: 1 },
+  currentPrizeValue: { fontFamily: Fonts.number, fontSize: 20, fontWeight: '900', color: Colors.gold, letterSpacing: 1 },
   lifelines: { flexDirection: 'row', justifyContent: 'center', gap: 4, marginBottom: 10 },
   adLifeline: { alignItems: 'center', paddingVertical: 8, paddingHorizontal: 10 },
   adLifelineCircle: {
@@ -311,42 +312,42 @@ const styles = StyleSheet.create({
   questionCard: { borderRadius: 18, overflow: 'hidden', marginBottom: 16, borderWidth: 1.5, borderColor: Colors.goldDark },
   questionGradient: { padding: 18 },
   questionHeader: { flexDirection: 'row', alignItems: 'center', marginBottom: 10 },
-  questionCategory: { fontSize: 10, color: Colors.gold, fontWeight: '700', letterSpacing: 2 },
+  questionCategory: { fontFamily: Fonts.text, fontSize: 10, color: Colors.gold, fontWeight: '700', letterSpacing: 2 },
   questionDot: { width: 4, height: 4, borderRadius: 2, backgroundColor: Colors.gold, marginLeft: 8 },
-  questionText: { fontSize: 17, color: Colors.textPrimary, fontWeight: '600', lineHeight: 26, textAlign: 'center' },
+  questionText: { fontFamily: Fonts.text, fontSize: 17, color: Colors.textPrimary, fontWeight: '600', lineHeight: 26, textAlign: 'center' },
   answersContainer: { gap: 8, marginBottom: 12 },
   confirmButton: { borderRadius: 50, overflow: 'hidden', marginBottom: 12, elevation: 8, shadowColor: Colors.gold, shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.5, shadowRadius: 8 },
   confirmGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 16, gap: 8 },
-  confirmText: { fontSize: 16, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 2 },
+  confirmText: { fontFamily: Fonts.button, fontSize: 16, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 2 },
   // Idle
   idleContent: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 32 },
-  idleTitle: { fontSize: 56, fontWeight: '900', color: Colors.gold, letterSpacing: 8, textShadowColor: Colors.goldGlow, textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 20 },
-  idleSubtitle: { fontSize: 16, color: Colors.textSecondary, letterSpacing: 2, marginTop: 4 },
+  idleTitle: { fontFamily: Fonts.title, fontSize: 56, fontWeight: '900', color: Colors.gold, letterSpacing: 8, textShadowColor: Colors.goldGlow, textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 20 },
+  idleSubtitle: { fontFamily: Fonts.text, fontSize: 16, color: Colors.textSecondary, letterSpacing: 2, marginTop: 4 },
   idleDivider: { width: 60, height: 2, backgroundColor: Colors.gold, marginVertical: 20 },
-  idleDesc: { fontSize: 14, color: Colors.textSecondary, textAlign: 'center', marginBottom: 32, lineHeight: 22 },
+  idleDesc: { fontFamily: Fonts.text, fontSize: 14, color: Colors.textSecondary, textAlign: 'center', marginBottom: 32, lineHeight: 22 },
   startButton: { width: '100%', borderRadius: 50, overflow: 'hidden', marginBottom: 16, elevation: 10, shadowColor: Colors.gold, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.7, shadowRadius: 16 },
   startGradient: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingVertical: 18, gap: 12 },
-  startText: { fontSize: 20, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 3 },
+  startText: { fontFamily: Fonts.button, fontSize: 20, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 3 },
   adRewardButton: { alignItems: 'center', justifyContent: 'center', width: 60, height: 60, borderRadius: 30, borderWidth: 1.5, borderColor: Colors.goldDark, backgroundColor: Colors.surface },
   // Result
   resultContainer: { flex: 1, justifyContent: 'center', alignItems: 'center', padding: 24 },
   resultCard: { width: '100%', borderRadius: 24, padding: 32, alignItems: 'center', borderWidth: 1, borderColor: Colors.goldDark },
   resultEmoji: { fontSize: 64, marginBottom: 12 },
-  resultTitle: { fontSize: 36, fontWeight: '900', color: Colors.textPrimary, letterSpacing: 4 },
+  resultTitle: { fontFamily: Fonts.title, fontSize: 36, fontWeight: '900', color: Colors.textPrimary, letterSpacing: 4 },
   resultTitleGold: { color: Colors.gold },
-  resultSubtitle: { fontSize: 16, color: Colors.textSecondary, marginTop: 6, marginBottom: 20 },
+  resultSubtitle: { fontFamily: Fonts.text, fontSize: 16, color: Colors.textSecondary, marginTop: 6, marginBottom: 20 },
   resultPrize: { alignItems: 'center', marginBottom: 16 },
-  resultCoins: { fontSize: 32, fontWeight: '900', color: Colors.gold, marginTop: 8 },
-  resultCoinsLabel: { fontSize: 13, color: Colors.textSecondary, marginTop: 4 },
-  resultNoWin: { fontSize: 16, color: Colors.textMuted, marginBottom: 16 },
-  resultTotal: { fontSize: 14, color: Colors.textSecondary, marginBottom: 24 },
+  resultCoins: { fontFamily: Fonts.number, fontSize: 32, fontWeight: '900', color: Colors.gold, marginTop: 8 },
+  resultCoinsLabel: { fontFamily: Fonts.text, fontSize: 13, color: Colors.textSecondary, marginTop: 4 },
+  resultNoWin: { fontFamily: Fonts.text, fontSize: 16, color: Colors.textMuted, marginBottom: 16 },
+  resultTotal: { fontFamily: Fonts.number, fontSize: 14, color: Colors.textSecondary, marginBottom: 24 },
   playAgainButton: { width: '100%', borderRadius: 50, overflow: 'hidden', marginBottom: 12 },
   playAgainGradient: { paddingVertical: 16, alignItems: 'center' },
-  playAgainText: { fontSize: 18, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 2 },
+  playAgainText: { fontFamily: Fonts.button, fontSize: 18, fontWeight: '900', color: Colors.backgroundDeep, letterSpacing: 2 },
   watchAdButton: { alignItems: 'center', justifyContent: 'center', width: 52, height: 52, borderRadius: 26, borderWidth: 1, borderColor: Colors.goldDark },
   // Modal
   modalOverlay: { flex: 1, backgroundColor: Colors.overlay, justifyContent: 'flex-end' },
   modalContainer: { backgroundColor: Colors.backgroundDeep, borderTopLeftRadius: 24, borderTopRightRadius: 24, maxHeight: '80%', borderWidth: 1, borderColor: Colors.surfaceLight },
   modalHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, borderBottomWidth: 1, borderBottomColor: Colors.surfaceLight },
-  modalTitle: { fontSize: 18, fontWeight: '700', color: Colors.gold },
+  modalTitle: { fontFamily: Fonts.title, fontSize: 18, fontWeight: '700', color: Colors.gold },
 });

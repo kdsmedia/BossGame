@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.10",
+    "@expo-google-fonts/baloo-2": "^0.4.2",
+    "@expo-google-fonts/fredoka": "^0.4.1",
     "@expo-google-fonts/inter": "^0.4.1",
+    "@expo-google-fonts/lilita-one": "^0.4.1",
     "@expo/metro-runtime": "6.1.2",
     "@expo/styleguide-native": "^1.0.1",
     "@expo/vector-icons": "^15.1.1",
